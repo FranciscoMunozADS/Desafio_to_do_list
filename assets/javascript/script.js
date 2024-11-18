@@ -59,10 +59,19 @@ const addTask = () => {
 
 /* Función para eliminar una tarea */
 
-const deleteTask = (id) => {
+/* const deleteTask = (id) => {
     tasks = tasks.filter (task => task.id !== id);
     renderTasks();
-}
+} */
+
+const deleteTask = (id) => {
+    const index = tasks.findIndex(task => task.id === id);
+    if (index !== -1) {
+      tasks.splice(index, 1);
+      renderTasks();
+    }
+  };
+
 
 
 /* Función para cambiar el estado de una tarea (checkbox) */
